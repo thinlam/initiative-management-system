@@ -1,10 +1,14 @@
+// Models/Product.cs
 public class Product
 {
-    public Guid Id {get; set;} = Guid.NewGuid(); // Tạo Id tự động khi tạo đối tượng mới
-    public string Ma {get; set;} = string.Empty; // string.Empty để tránh lỗi null khi tạo đối tượng mới
-    public string Ten { get; set; } = string.Empty; // string.Empty để tránh lỗi null khi tạo đối tượng mới
-    public string? MoTa { get; set; }
-    public decimal Gia { get; set; }
-    public int CategoryId { get; set; } // Foreign key
-    public Category? Category { get; set; } // Navigation property
+    public Guid Id { get; set; } = Guid.NewGuid();
+    public string Ma { get; set; } = string.Empty;      // Code: "PRD001"
+    public string Ten { get; set; } = string.Empty;     // Name
+    public string? MoTa { get; set; }                   // Description
+    public decimal Gia { get; set; }                    // Price
+    public int SoLuong { get; set; }                    // Quantity
+    public int CategoryId { get; set; }                 // FK
+    
+    // Navigation property
+    public Category? Category { get; set; }
 }
