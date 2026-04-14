@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ProductCategoryApi.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class InitialSqlite : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,11 +17,11 @@ namespace ProductCategoryApi.Migrations
                 name: "Categories",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Ma = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Ten = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    MoTa = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Ma = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    Ten = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
+                    MoTa = table.Column<string>(type: "TEXT", maxLength: 1000, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -32,13 +32,13 @@ namespace ProductCategoryApi.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Ma = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Ten = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    MoTa = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
-                    Gia = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
-                    SoLuong = table.Column<int>(type: "int", nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Ma = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    Ten = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
+                    MoTa = table.Column<string>(type: "TEXT", maxLength: 1000, nullable: true),
+                    Gia = table.Column<decimal>(type: "TEXT", precision: 18, scale: 2, nullable: false),
+                    SoLuong = table.Column<int>(type: "INTEGER", nullable: false),
+                    CategoryId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
