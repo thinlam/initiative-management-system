@@ -16,3 +16,35 @@ packages/
 # IDE
 .idea/
 .vscode/
+# Build artifacts
+bin/
+obj/
+
+# SQLite / local database files
+*.db
+*.db-shm
+*.db-wal
+
+# IDE
+.vs/
+.vscode/
+
+# Secrets
+appsettings.Local.json
+*.user
+
+# app settings local
+appsettings.json
+appsettings.Development.json
+
+# example file should be committed
+!appsettings.Example.json
+
+# sqlite / local database files
+*.db
+*.db-shm
+*.db-wal
+
+# build artifacts
+bin/
+obj/

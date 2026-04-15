@@ -34,6 +34,18 @@ public class ProductsController : ControllerBase
     }
 
     // POST: api/products
+    // <summary>
+    // Create a new product. The request body should contain the product details in JSON format.
+    // Example request body:
+    // {
+    //   "ma": "PROD001",
+    //   "ten": "Laptop Dell XPS 13",
+    //   "moTa": "Laptop cao cấp với
+    //   "gia": 15000000,
+    //   "soLuong": 10,
+    //   "categoryId": 1
+    // }    
+    // </summary>
     [HttpPost]
     public async Task<ActionResult<Product>> Create(Product product)
     {
